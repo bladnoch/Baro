@@ -25,7 +25,6 @@ public class MemberServiceImpl implements MemberService{
         memberRepo.changePw(phoneNumber,newPw);
     }
 
-
     public String[] currentUser() {
         return memberRepo.getCurrentUserInfo();
     }
