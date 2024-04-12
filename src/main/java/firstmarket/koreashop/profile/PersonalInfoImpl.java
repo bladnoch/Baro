@@ -5,6 +5,8 @@ import firstmarket.koreashop.member.MemberService;
 import firstmarket.koreashop.upload.UploadService;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+
 @Component
 public class PersonalInfoImpl {
 
@@ -16,23 +18,19 @@ public class PersonalInfoImpl {
         this.uploadService = uploadService;
     }
 
-    public String getMemberPhoneNumber() {
-        return memberService.currentUser()[3];
+    public String[] displayElementsOfProfile() {
+        return new String[]{memberService.currentUser()[3], memberService.currentUser()[0]};
     }
 
-    public String getMemberId() {
-        return memberService.currentUser()[0];
-    }
-
-    public String[] MemberUploadedItem() {
+    public ArrayList<String> MemberUploadedItem() {
         return null;
     }
 
-    public String[] MemberReservedItem() {
+    public ArrayList<String> MemberReservedItem() {
         return null;
     }
 
-    public String[] likedItem() {
+    public ArrayList<String> likedItem() {
         return null;
     }
 
