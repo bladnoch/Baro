@@ -27,3 +27,4 @@ public class ItemInfo {
     private String imagePath;
     private String reservation;
 }
+

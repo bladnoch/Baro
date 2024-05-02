@@ -50,7 +50,6 @@ public class MemberController {
     @GetMapping("/member/currentUser")
     public CurrentUserResponse getCurrentUser(){
         memberService.currentUser();
-
         return new CurrentUserResponse( memberService.currentUser());
     }
 
