@@ -1,13 +1,13 @@
 package firstmarket.koreashop.controller;
 
+import firstmarket.koreashop.dto.CurrentUserResponse;
 import firstmarket.koreashop.member.Member;
 import firstmarket.koreashop.member.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.filter.RequestContextFilter;
 
 @RestController
-public class ServiceController {
+public class MemberController {
 
     @Autowired
     MemberService memberService;
@@ -29,5 +29,30 @@ public class ServiceController {
     public String findMemberIdByPhoneNumber(@RequestParam String phoneNumber) {
         return memberService.findMemberIdByPhoneNumber(phoneNumber);
     }
+
+    /**
+     * change password by phone number
+     * @param phoneNumber : saved phone number
+     * @param newPw : new password that user is going to use
+     */
+    //아직 테스트 못해봄
+    @GetMapping("/member/changePw")
+    public void changePwByPhoneNumber(@RequestParam String phoneNumber, @RequestParam String newPw) {
+        memberService.changePwByPhoneNumber(phoneNumber,newPw);
+    }
+
+
+    /**
+     * keep current user's information from member repo
+     * @return Member : String list of member's elements
+     */
+//    String[] currentUser(); //get
+    @GetMapping("/member/currentUser")
+    public CurrentUserResponse getCurrentUser(){
+        memberService.currentUser();
+
+        return new CurrentUserResponse( memberService.currentUser());
+    }
+
 
 }
