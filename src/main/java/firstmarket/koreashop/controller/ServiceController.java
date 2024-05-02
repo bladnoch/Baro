@@ -1,12 +1,10 @@
 package firstmarket.koreashop.controller;
 
-import firstmarket.koreashop.dto.MemberServiceRequest;
 import firstmarket.koreashop.member.Member;
-import firstmarket.koreashop.member.MemberRepo;
 import firstmarket.koreashop.member.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.filter.RequestContextFilter;
 
 @RestController
 public class ServiceController {
@@ -20,10 +18,16 @@ public class ServiceController {
      * 추후 클라이언트에서 저장여부 확인을 위해 return 추가할 수 있음
      * 추가하지 못했을 때 문제를 return
      */
+
     @GetMapping("/member")
     public void saveMember(@RequestBody Member member){
         memberService.join(member);
     }
 
+    //    String findMemberIdByPhoneNumber(String phoneNumber);
+    @GetMapping("/member/getId")
+    public String findMemberIdByPhoneNumber(@RequestParam String phoneNumber) {
+        return memberService.findMemberIdByPhoneNumber(phoneNumber);
+    }
 
 }
