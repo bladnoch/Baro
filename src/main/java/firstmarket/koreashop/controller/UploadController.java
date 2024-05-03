@@ -4,6 +4,7 @@ import firstmarket.koreashop.dto.MainpageItemsResponse;
 import firstmarket.koreashop.item.ItemInfo;
 import firstmarket.koreashop.upload.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +17,10 @@ import java.util.List;
 public class UploadController {
     @Autowired
     UploadService uploadService;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
     /**
      * void uploadItem(ItemInfo itemInfo); //put
      * void makeTrade(); //post

@@ -4,6 +4,7 @@ import firstmarket.koreashop.dto.CurrentUserResponse;
 import firstmarket.koreashop.member.Member;
 import firstmarket.koreashop.member.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,6 +12,9 @@ public class MemberController {
 
     @Autowired
     MemberService memberService;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     /**
      * 멤버 저장 기능
@@ -21,7 +25,10 @@ public class MemberController {
 
     @GetMapping("/member")
     public void saveMember(@RequestBody Member member){
-        memberService.join(member);
+        String sql = "INSERT INTO memberRepo (memberId, memberPw, memberName, phoneNumber) VALUES (?, ?, ?, ?)";
+        jdbcTemplate.update(sql, member.getMemberId(), member.getMemberPw(), member.getMemberName(), member.getPhoneNumber());
+
+//        memberService.join(member);
     }
 
     //    String findMemberIdByPhoneNumber(String phoneNumber);
