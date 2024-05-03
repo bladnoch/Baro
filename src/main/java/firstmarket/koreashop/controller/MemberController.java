@@ -23,10 +23,11 @@ public class MemberController {
      * 추가하지 못했을 때 문제를 return
      */
 
-    @GetMapping("/member")
+    @PostMapping("/member")
     public void saveMember(@RequestBody Member member){
         String sql = "INSERT INTO memberRepo (memberId, memberPw, memberName, phoneNumber) VALUES (?, ?, ?, ?)";
         jdbcTemplate.update(sql, member.getMemberId(), member.getMemberPw(), member.getMemberName(), member.getPhoneNumber());
+
 
 //        memberService.join(member);
     }
