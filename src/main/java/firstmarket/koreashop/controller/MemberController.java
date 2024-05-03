@@ -34,6 +34,8 @@ public class MemberController {
     //    String findMemberIdByPhoneNumber(String phoneNumber);
     @GetMapping("/member/getId")
     public String findMemberIdByPhoneNumber(@RequestParam String phoneNumber) {
+        String sql = "SELECT memberId from memberRepo WHERE phoneNumber = ('phoneNumber') VALUES (?)";
+
         return memberService.findMemberIdByPhoneNumber(phoneNumber);
     }
 
