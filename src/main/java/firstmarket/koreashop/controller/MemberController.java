@@ -25,18 +25,12 @@ public class MemberController {
 
     @PostMapping("/member")
     public void saveMember(@RequestBody Member member){
-        String sql = "INSERT INTO memberRepo (memberId, memberPw, memberName, phoneNumber) VALUES (?, ?, ?, ?)";
-        jdbcTemplate.update(sql, member.getMemberId(), member.getMemberPw(), member.getMemberName(), member.getPhoneNumber());
-
-
-//        memberService.join(member);
+        memberService.join(member);
     }
 
     //    String findMemberIdByPhoneNumber(String phoneNumber);
     @GetMapping("/member/getId")
     public String findMemberIdByPhoneNumber(@RequestParam String phoneNumber) {
-        String sql = "SELECT memberId from memberRepo WHERE phoneNumber = ('phoneNumber') VALUES (?)";
-
         return memberService.findMemberIdByPhoneNumber(phoneNumber);
     }
 

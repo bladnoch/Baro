@@ -1,6 +1,8 @@
 package firstmarket.koreashop.member;
 
 import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -20,6 +22,9 @@ public class MemberRepoTemp implements MemberRepo {
 
     private static final ArrayList<String[]> storage = new ArrayList<>();
     private static String[] currentUser = new String[4];
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
 
     @Override
@@ -41,11 +46,11 @@ public class MemberRepoTemp implements MemberRepo {
 
     @Override
     public String findMemberId(String phoneNumber){
-        for (int i = 0; i < storage.size(); i++) {
-            if (storage.get(i)[3].equals(phoneNumber)) {
-                return storage.get(i)[0];
-            }
-        }
+        String sql = "SELECT memberId from memberRepo WHERE phoneNumber = ('phoneNumber') VALUES (?)";
+
+        jdbcTemplate.update(sql, phoneNumber);
+
+
         return "없는 회원정보 입니다.";
     }
 
