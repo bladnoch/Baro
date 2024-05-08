@@ -1,5 +1,6 @@
 package firstmarket.koreashop.member;
 
+import firstmarket.koreashop.dto.ChangePasswordRequest;
 import lombok.ToString;
 
 
@@ -19,14 +20,15 @@ public interface MemberService {
 
     /**
      * change password by phone number
-     * @param phoneNumber : saved phone number
-     * @param newPw : new password that user is going to use
+     * ChangePasswordRequest 변수들
+     * phoneNumber : saved phone number
+     * newPw : new password that user is going to use
      */
-    void changePwByPhoneNumber(String phoneNumber,String newPw); //patch
+    void changePwByPhoneNumber(ChangePasswordRequest request);
 
     /**
      * keep current user's information from member repo
      * @return Member : String list of member's elements
      */
-    String[] currentUser(); //get
+    Member currentUser(String ); //get
 }

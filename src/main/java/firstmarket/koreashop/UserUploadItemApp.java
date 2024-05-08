@@ -1,5 +1,6 @@
 package firstmarket.koreashop;
 
+import firstmarket.koreashop.dto.ChangePasswordRequest;
 import firstmarket.koreashop.item.ItemInfo;
 import firstmarket.koreashop.item.ItemRepo;
 import firstmarket.koreashop.item.ItemRepoTemp;
@@ -37,7 +38,7 @@ public class UserUploadItemApp {
 
 
         //User wants to find(change) his PW
-        memberService.changePwByPhoneNumber("01046054434","New!ehddnr0516");
+        memberService.changePwByPhoneNumber(new ChangePasswordRequest("01046054434","New!ehddnr0516"));
         String userNewPw = memberService.currentUser()[1];
         System.out.println("\n>> User wants to find(change) his PW = " + userNewPw);
 

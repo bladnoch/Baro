@@ -1,5 +1,6 @@
 package firstmarket.koreashop.member;
 
+import firstmarket.koreashop.dto.ChangePasswordRequest;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -44,7 +45,7 @@ class MemberServiceImplTest {
         Member member = new Member("yujung0516", "yujungjung", "jujung kim", "0102464318");
         memberService.join(member);
 
-        memberService.changePwByPhoneNumber("0102464318","1234yujung");
+        memberService.changePwByPhoneNumber(new ChangePasswordRequest("0102464318","1234yujung"));
 
         Assertions.assertThat(tempMemberRepo.findPwByPhoneNumber("0102464318")).isEqualTo("1234yujung");
     }

@@ -1,5 +1,6 @@
 package firstmarket.koreashop.controller;
 
+import firstmarket.koreashop.dto.ChangePasswordRequest;
 import firstmarket.koreashop.dto.CurrentUserResponse;
 import firstmarket.koreashop.member.Member;
 import firstmarket.koreashop.member.MemberService;
@@ -36,13 +37,13 @@ public class MemberController {
 
     /**
      * change password by phone number
-     * @param phoneNumber : saved phone number
-     * @param newPw : new password that user is going to use
+     * phoneNumber : saved phone number
+     * newPw : new password that user is going to use
      */
     //아직 테스트 못해봄
-    @GetMapping("/member/changePw")
-    public void changePwByPhoneNumber(@RequestParam String phoneNumber, @RequestParam String newPw) {
-        memberService.changePwByPhoneNumber(phoneNumber,newPw);
+    @PutMapping("/member/changePw")
+    public void changePwByPhoneNumber(ChangePasswordRequest request) {
+        memberService.changePwByPhoneNumber(request);
     }
 
 
@@ -52,9 +53,9 @@ public class MemberController {
      */
 //    String[] currentUser(); //get
     @GetMapping("/member/currentUser")
-    public CurrentUserResponse getCurrentUser(){
+    public Member getCurrentUserByMemberId(){
         memberService.currentUser();
-        return new CurrentUserResponse( memberService.currentUser());
+        return new Member(memberService.currentUser());
     }
 
 

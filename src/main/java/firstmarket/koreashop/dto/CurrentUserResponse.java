@@ -4,6 +4,14 @@ public class CurrentUserResponse {
     private String currentId;
     private String currentPw;
     private String currentName;
+
+    public CurrentUserResponse(String currentId, String currentPw, String currentName, String phoneNumber) {
+        this.currentId = currentId;
+        this.currentPw = currentPw;
+        this.currentName = currentName;
+        this.phoneNumber = phoneNumber;
+    }
+
     private String phoneNumber;
 
     public String getCurrentId() {
@@ -22,10 +30,5 @@ public class CurrentUserResponse {
         return phoneNumber;
     }
 
-    public CurrentUserResponse(String[] currentUser) {
-        this.currentId = currentUser[0];
-        this.currentPw = currentUser[1];
-        this.currentName = currentUser[2];
-        this.phoneNumber = currentUser[3];
-    }
+
 }
