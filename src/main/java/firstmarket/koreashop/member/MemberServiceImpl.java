@@ -23,18 +23,13 @@ public class MemberServiceImpl implements MemberService{
 
 
     public void join(MemberCreateRequest request) {
-
         memberRepository.save(new Member(request.getMemberId(), request.getMemberPw(), request.getMemberName(), request.getPhoneNumber()));
     }
 
     public String findMemberIdByPhoneNumber(String phoneNumber){
-//        String sql = "SELECT memberId FROM memberRepo WHERE phoneNumber = ?";
-//        // ? 에 들어가는 값을 찾아 매핑한다.
-//        return jdbcTemplate.queryForObject(sql, new Object[]{phoneNumber}, String.class);
-
-
-        return memberRepository.findMemberIdByPhoneNumber(phoneNumber)
-                .orElseThrow(IllegalAccessError::new);
+        Member target = memberRepository.findMemberIdByPhoneNumber(phoneNumber).orElseThrow(IllegalArgumentException::new);
+        String memberId = target.getMemberId();
+        return memberId;
     }
 
     public void changePwByPhoneNumber(ChangePasswordRequest request) {
