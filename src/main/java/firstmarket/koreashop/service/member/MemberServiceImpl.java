@@ -1,11 +1,11 @@
-package firstmarket.koreashop.service;
+package firstmarket.koreashop.service.member;
 
 
-import firstmarket.koreashop.domain.Member;
-import firstmarket.koreashop.domain.MemberRepository;
-import firstmarket.koreashop.dto.ChangePasswordRequest;
+import firstmarket.koreashop.domain.member.Member;
+import firstmarket.koreashop.domain.member.MemberRepository;
+import firstmarket.koreashop.dto.member.ChangePasswordRequest;
 
-import firstmarket.koreashop.dto.MemberCreateRequest;
+import firstmarket.koreashop.dto.member.MemberCreateRequest;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;

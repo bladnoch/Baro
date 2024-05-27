@@ -2,7 +2,7 @@ package firstmarket.koreashop.upload;
 
 import firstmarket.koreashop.item.ItemInfo;
 import firstmarket.koreashop.item.ItemRepo;
-import firstmarket.koreashop.member.MemberRepo;
+import firstmarket.koreashop.legacy.MemberRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

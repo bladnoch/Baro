@@ -1,4 +1,4 @@
-package firstmarket.koreashop.domain;
+package firstmarket.koreashop.domain.member;
 
 import jakarta.persistence.*;
 import lombok.Getter;

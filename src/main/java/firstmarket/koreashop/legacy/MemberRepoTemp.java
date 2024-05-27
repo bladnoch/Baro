@@ -1,6 +1,6 @@
-package firstmarket.koreashop.member;
+package firstmarket.koreashop.legacy;
 
-import firstmarket.koreashop.domain.Member;
+import firstmarket.koreashop.domain.member.Member;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

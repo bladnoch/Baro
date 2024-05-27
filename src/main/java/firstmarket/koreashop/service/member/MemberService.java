@@ -1,7 +1,7 @@
-package firstmarket.koreashop.service;
+package firstmarket.koreashop.service.member;
 
-import firstmarket.koreashop.dto.ChangePasswordRequest;
-import firstmarket.koreashop.dto.MemberCreateRequest;
+import firstmarket.koreashop.dto.member.ChangePasswordRequest;
+import firstmarket.koreashop.dto.member.MemberCreateRequest;
 
 
 public interface MemberService {

@@ -1,9 +1,9 @@
 package firstmarket.koreashop.controller;
 
-import firstmarket.koreashop.dto.ChangePasswordRequest;
+import firstmarket.koreashop.dto.member.ChangePasswordRequest;
 
-import firstmarket.koreashop.dto.MemberCreateRequest;
-import firstmarket.koreashop.service.MemberService;
+import firstmarket.koreashop.dto.member.MemberCreateRequest;
+import firstmarket.koreashop.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
