@@ -30,7 +30,7 @@ public class MemberController {
         memberService.join(request);
     }
 
-    //    String findMemberIdByPhoneNumber(String phoneNumber);
+
     @GetMapping("/member/getId")
     public String findMemberIdByPhoneNumber(@RequestParam String phoneNumber) {
         return memberService.findMemberIdByPhoneNumber(phoneNumber);
@@ -41,9 +41,8 @@ public class MemberController {
      * phoneNumber : saved phone number
      * newPw : new password that user is going to use
      */
-    //아직 테스트 못해봄
-    @PutMapping("/member/changePw")
-    public void changePwByPhoneNumber(ChangePasswordRequest request) {
+    @PostMapping("/member/changePw")
+    public void changePwByPhoneNumber(@RequestBody ChangePasswordRequest request) {
         memberService.changePwByPhoneNumber(request);
     }
 

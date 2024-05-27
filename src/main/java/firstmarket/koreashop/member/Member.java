@@ -31,6 +31,10 @@ public class Member {
 
     @Column(length = 20)
     private String phoneNumber;
+
+    public void updatePw(String newPw) {
+        this.memberPw = newPw;
+    }
 }
 
 
