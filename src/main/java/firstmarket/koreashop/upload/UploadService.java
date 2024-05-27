@@ -1,6 +1,6 @@
 package firstmarket.koreashop.upload;
 
-import firstmarket.koreashop.item.ItemInfo;
+import firstmarket.koreashop.domain.item.ItemInfo;
 
 import java.util.ArrayList;
 

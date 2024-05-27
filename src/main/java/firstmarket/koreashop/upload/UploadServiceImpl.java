@@ -1,6 +1,6 @@
 package firstmarket.koreashop.upload;
 
-import firstmarket.koreashop.item.ItemInfo;
+import firstmarket.koreashop.domain.item.ItemInfo;
 import firstmarket.koreashop.item.ItemRepo;
 import firstmarket.koreashop.legacy.MemberRepo;
 import org.springframework.beans.factory.annotation.Autowired;

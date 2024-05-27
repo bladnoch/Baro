@@ -1,7 +1,7 @@
 package firstmarket.koreashop.controller;
 
 import firstmarket.koreashop.dto.MainpageItemsResponse;
-import firstmarket.koreashop.item.ItemInfo;
+import firstmarket.koreashop.domain.item.ItemInfo;
 import firstmarket.koreashop.upload.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

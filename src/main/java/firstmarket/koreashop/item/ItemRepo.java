@@ -1,5 +1,6 @@
 package firstmarket.koreashop.item;
 
+import firstmarket.koreashop.domain.item.ItemInfo;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

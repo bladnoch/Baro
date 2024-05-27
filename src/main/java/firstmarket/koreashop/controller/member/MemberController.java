@@ -1,4 +1,4 @@
-package firstmarket.koreashop.controller;
+package firstmarket.koreashop.controller.member;
 
 import firstmarket.koreashop.dto.member.ChangePasswordRequest;
 
