@@ -1,4 +1,4 @@
-package firstmarket.koreashop.profile;
+package firstmarket.koreashop.legacy.profile;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,7 @@
-package firstmarket.koreashop.dto;
+package firstmarket.koreashop.legacy;
 
 import lombok.Getter;
 
-import java.util.List;
 @Getter
 public class MainpageItemsResponse {
 

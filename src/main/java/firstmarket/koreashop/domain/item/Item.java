@@ -1,6 +1,7 @@
 package firstmarket.koreashop.domain.item;
 
 
+import firstmarket.koreashop.domain.member.Member;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,10 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id=null;
+
+    @ManyToOne
+    private Member member;
+
 
     @Column(nullable = false)
     private String itemName;

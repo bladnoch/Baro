@@ -1,4 +1,4 @@
-package firstmarket.koreashop.dto;
+package firstmarket.koreashop.legacy;
 
 public class CurrentUserResponse {
     private String currentId;
