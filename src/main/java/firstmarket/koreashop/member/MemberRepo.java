@@ -1,5 +1,6 @@
 package firstmarket.koreashop.member;
 
+import firstmarket.koreashop.domain.Member;
 import org.springframework.stereotype.Repository;
 
 @Repository

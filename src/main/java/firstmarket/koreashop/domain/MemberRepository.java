@@ -1,4 +1,4 @@
-package firstmarket.koreashop.member;
+package firstmarket.koreashop.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

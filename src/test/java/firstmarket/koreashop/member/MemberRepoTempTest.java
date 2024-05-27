@@ -1,5 +1,6 @@
 package firstmarket.koreashop.member;
 
+import firstmarket.koreashop.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -1,9 +1,8 @@
-package firstmarket.koreashop.member;
+package firstmarket.koreashop.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Getter
 @Entity
