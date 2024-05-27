@@ -3,19 +3,20 @@ package firstmarket.koreashop.controller;
 import firstmarket.koreashop.dto.ChangePasswordRequest;
 import firstmarket.koreashop.dto.CurrentUserResponse;
 import firstmarket.koreashop.member.Member;
+import firstmarket.koreashop.member.MemberCreateRequest;
 import firstmarket.koreashop.member.MemberService;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 public class MemberController {
+    private final MemberService memberService;
 
-    @Autowired
-    MemberService memberService;
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
 
     /**
      * 멤버 저장 기능
@@ -25,8 +26,8 @@ public class MemberController {
      */
 
     @PostMapping("/member")
-    public void saveMember(@RequestBody Member member){
-        memberService.join(member);
+    public void saveMember(@RequestBody MemberCreateRequest request){
+        memberService.join(request);
     }
 
     //    String findMemberIdByPhoneNumber(String phoneNumber);
@@ -52,11 +53,11 @@ public class MemberController {
      * @return Member : String list of member's elements
      */
 //    String[] currentUser(); //get
-    @GetMapping("/member/currentUser")
-    public Member getCurrentUserByMemberId(){
-        memberService.currentUser();
-        return new Member(memberService.currentUser());
-    }
+//    @GetMapping("/member/currentUser")
+//    public Member getCurrentUserByMemberId(){
+//        memberService.currentUser();
+//        return new Member(memberService.currentUser());
+//    }
 
 
 }

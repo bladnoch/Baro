@@ -1,10 +1,13 @@
 package firstmarket.koreashop.member;
 
+import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Getter
-@Setter
+@Entity
+@NoArgsConstructor
 public class Member {
     public Member(String memberId, String memberPw, String memberName, String phoneNumber) {
         this.memberId = memberId;
@@ -13,9 +16,20 @@ public class Member {
         this.phoneNumber = phoneNumber;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id=null;
+
+    @Column(length = 20)
     private String memberId;
+
+    @Column(length = 20)
     private String memberPw;
+
+    @Column(length = 20)
     private String memberName;
+
+    @Column(length = 20)
     private String phoneNumber;
 }
 

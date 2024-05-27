@@ -9,7 +9,7 @@ public interface MemberService {
      * get member's param and create new Member info
      * @param member : String memberId, String memberPw, String memberName, String phoneNumber
      */
-    void join(Member member); //put
+    void join(MemberCreateRequest request); //post
 
     /**
      * find account Id by saved phone number
@@ -30,5 +30,5 @@ public interface MemberService {
      * keep current user's information from member repo
      * @return Member : String list of member's elements
      */
-    Member currentUser(String ); //get
+//    Member currentUser(String phoneNum ); //get
 }
