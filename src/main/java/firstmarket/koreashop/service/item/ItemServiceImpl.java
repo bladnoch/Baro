@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ItemServiceImpl implements ItemService{
 
-    private ItemRepository itemRepository;
+    private final ItemRepository itemRepository;
 
     public void saveItem(ItemCreateRequest request) {
         itemRepository.save(

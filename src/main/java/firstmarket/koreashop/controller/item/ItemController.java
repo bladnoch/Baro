@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ItemController {
 
-    private ItemService itemService;
+    private final ItemService itemService;
 
     @PostMapping("/item")
     public void saveItem(@RequestBody ItemCreateRequest request) {
-
+        itemService.saveItem(request);
     }
 
 }
