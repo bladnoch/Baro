@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 public class ItemCreateRequest {
 
-    public ItemCreateRequest(String itemName, String itemDetail, long itemPrice, String sellerId) {
+    public ItemCreateRequest(String itemName, String itemDetail, long itemPrice, Long sellerId) {
         this.itemName = itemName;
         this.itemDetail = itemDetail;
         this.itemPrice = itemPrice;
@@ -22,8 +22,8 @@ public class ItemCreateRequest {
     private String itemName;
     private String itemDetail;
     private long itemPrice;
-    private String sellerId;
-    private String buyerId;
+    private Long sellerId;
+    private Long buyerId;
     private String imagePath;
     private boolean reservation;
 }

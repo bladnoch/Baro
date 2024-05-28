@@ -14,7 +14,7 @@ import lombok.ToString;
 @NoArgsConstructor
 public class Item {
 
-    public Item(String itemName, String itemDetail, long itemPrice, String sellerId, String buyerId, boolean reservation) {
+    public Item( String itemName, String itemDetail, long itemPrice, Long sellerId, Long buyerId, boolean reservation) {
         this.itemName = itemName;
         this.itemDetail = itemDetail;
         this.itemPrice = itemPrice;
@@ -33,20 +33,31 @@ public class Item {
     private Member member;
 
 
+    // origirnals
     @Column(nullable = false)
     private String itemName;
-
     @Column(nullable = false)
     private String itemDetail;
-
     @Column(nullable = false)
     private long itemPrice;
-
-    @Column(nullable = false)
-    private String sellerId;
-
-    private String buyerId;
     private String imagePath;
     private boolean reservation;
+
+
+    //
+    @Column(nullable = false)
+    private Long sellerId;
+    private Long buyerId;
+
+
+    public void addBuyerId(Long buyerId) {
+        this.buyerId = buyerId;
+        this.reservation = true;
+    }
+
+    public void deleteBuyerId(Long buyerId) {
+        this.buyerId = null;
+        this.reservation = false;
+    }
 }
 
